@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<h2><center>SearchEmployee</center></h2>
+{% from "includes/formhelpers.html" import render_field %}
+<form method="POST" action="">
+<p><input type="text" name="employee"></p>
+ <p><input type="submit" class="btn btn-primary" value="Search"></p>
+</form>
+
+{% for item in data %}
+<table class = "table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+        </tr>
+            <tr>
+                <td> {{item[0]}}</td>
+                <td> {{item[1]}}</td>
+                <td> {{item[2]}}</td>
+                <td> {{item[3]}}</td>
+            </tr>
+        </table>
+        {% endfor %}
+        
+{% endblock %}

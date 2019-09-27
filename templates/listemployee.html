@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1> Employee Dashboard </h1>
+<table class = "table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th></th>
+        </tr>
+    </table>
+   
+        {% for employee in employees %}
+        <div class="container">
+      <div class="row">
+        <div class="col-sm-1">
+         {{employee[0]}}
+    </div>
+    <div class="col-sm-2">
+      {{employee[1]}}
+    </div>
+    <div class="col-sm-3">
+      {{employee[2]}}
+    </div>
+    <div class="col-sm-2">
+      {{employee[3]}}
+    </div>
+    <div class="col">
+      {{employee[4]}}
+    </div>
+    <div class="col">
+      <a href="/deleteemployee/{{employee[0]}}">Delete</a>
+    </div>
+  </div>
+</div>
+                             
+         {% endfor %}
+       
+{% endblock %}
